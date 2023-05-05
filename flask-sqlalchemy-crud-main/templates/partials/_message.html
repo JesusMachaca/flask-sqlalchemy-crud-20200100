@@ -1,0 +1,15 @@
+{% with messages = get_flashed_messages() %} <!-- Inicio del bloque "with", define una variable "messages" y asigna el valor devuelto por "get_flashed_messages()" -->
+{% if messages %} <!-- Comprueba si la variable "messages" no está vacía -->
+{% for message in messages %} <!-- Inicio de un bucle "for", que itera sobre cada mensaje en la lista de mensajes -->
+<div class="alert alert-info alert-dismissible fade show" role="alert"> <!-- Crea un elemento de alerta en Bootstrap con un estilo de alerta-info y un botón para cerrar la alerta -->
+  {{message}} <!-- Muestra el mensaje en la alerta -->
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button> <!-- Crea un botón para cerrar la alerta -->
+</div>
+{% endfor %} <!-- Fin del bucle "for" -->
+{% endif %} <!-- Fin de la condición "if" -->
+{% endwith %} <!-- Fin del bloque "with" -->

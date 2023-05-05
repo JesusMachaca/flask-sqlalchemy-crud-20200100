@@ -1,0 +1,42 @@
+{% extends "layout.html" %}  <!-- Extiende el archivo "layout.html" -->
+{% block body %}  <!-- Abre un bloque llamado "body" -->
+
+<div class="col-md-4 offset-md-4">  <!-- Crea una columna de tamaño medio con un desplazamiento de 4 -->
+  <div class="card card-body bg-dark text-white">  <!-- Crea una tarjeta con fondo oscuro y texto blanco -->
+    <h1>Edit Task</h1>  <!-- Agrega un encabezado de nivel 1 -->
+
+    <form action="{{url_for('contacts.update', id=contact.id)}}" method="POST">  <!-- Crea un formulario que enviará la solicitud POST a la ruta "contacts.update" con un parámetro "id" y el id del contacto actual -->
+      <div class="mb-3">  <!-- Crea un espacio vertical para separar elementos -->
+        <label for="fullname">Escriba sus nombres completos:</label>  <!-- Agrega una etiqueta para el campo de entrada de nombres completos -->
+        <input
+          type="text"
+          name="fullname"
+          value="{{contact.fullname}}"  <!-- Rellena el campo de entrada de nombres completos con el nombre completo del contacto actual -->
+          class="form-control bg-dark text-white rounded-0"
+        />
+      </div>
+      <div class="mb-3">  <!-- Crea un espacio vertical para separar elementos -->
+        <label for="email">Escriba su correo:</label>  <!-- Agrega una etiqueta para el campo de entrada de correo electrónico -->
+        <input
+          type="email"
+          name="email"
+          value="{{contact.email}}"  <!-- Rellena el campo de entrada de correo electrónico con el correo del contacto actual -->
+          class="form-control bg-dark text-white rounded-0"
+        />
+      </div>
+      <div class="mb-3">  <!-- Crea un espacio vertical para separar elementos -->
+        <label for="phone">Escriba su telefono:</label>  <!-- Agrega una etiqueta para el campo de entrada de teléfono -->
+        <input
+          type="tel"
+          name="phone"
+          value="{{contact.phone}}"  <!-- Rellena el campo de entrada de teléfono con el teléfono del contacto actual -->
+          class="form-control bg-dark text-white rounded-0"
+        />
+      </div>
+
+      <button class="btn btn-primary">Actualizar</button>  <!-- Agrega un botón para actualizar la información del contacto -->
+    </form>
+  </div>
+</div>
+
+{% endblock %}  <!-- Cierra el bloque "body" --> 

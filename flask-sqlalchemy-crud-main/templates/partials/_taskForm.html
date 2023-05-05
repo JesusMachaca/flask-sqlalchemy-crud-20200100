@@ -1,0 +1,45 @@
+<!-- Formulario para agregar un nuevo contacto -->
+<form action="/new" method="POST" class="card bg-black text-light">
+  <!-- Cuerpo de la tarjeta del formulario -->
+  <div class="card-body p-4">
+    <h1 class="h5 mb-4">Agregar Contacto</h1> <!-- Título del formulario -->
+
+    <!-- Campo de entrada para el nombre completo del contacto -->
+    <div class="mb-3">
+      <label for="fullname">Escriba sus nombres completos:</label>
+      <input
+        type="text"
+        name="fullname"
+        class="form-control rounded-0 bg-dark border-0 text-white"
+        placeholder="Write fullname"
+        autofocus
+      />
+    </div>
+
+    <!-- Campo de entrada para el correo electrónico del contacto -->
+    <div class="mb-3">
+      <label for="email">Escriba su correo:</label>
+      <input
+        type="text"
+        name="email"
+        class="form-control rounded-0 bg-dark border-0 text-white"
+        placeholder="Write your email"
+        required
+      />
+    </div>
+
+    <!-- Campo de entrada para el teléfono del contacto -->
+    <div class="mb-3">
+      <label for="phone">Escriba su telefono:</label>
+      <input
+        type="text"
+        name="phone"
+        class="form-control rounded-0 bg-dark border-0 text-white"
+        placeholder="+12123123123"
+      />
+    </div>
+
+    <!-- Botón para enviar el formulario -->
+    <button class="btn btn-primary">Guardar</button>
+  </div>
+</form>
